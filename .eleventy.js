@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPassthroughCopy({
     assets: 'assets',
+    _redirects: '_redirects',
     'node_modules/instant.page/instantpage.js': 'assets/instantpage.js'
   });
 };
