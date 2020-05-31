@@ -1,0 +1,47 @@
+---
+pagination:
+  data: collections.blog
+  size: 10
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="canonical" href="https://marcoslooten.com/" />
+    <title>Marco Slooten | Front end developer</title>
+  </head>
+  <body class="flex flex-col">
+  {% include 'header.njk' %}
+  
+      <div class="container mx-auto max-w-4xl p-4">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl bg-indigo-500 p-8 {% if cover_image %}-mt-16{% endif %} z-10 relative shadow-xl rounded-md" id="main-heading">Blog posts</h1>
+    </div>
+  <div class="container mx-auto max-w-3xl px-4">
+  <p class="mb-12">On this blog, I publish articles about front end development. Either HTML, CSS, JS, frameworks or a combination thereof. I try to document stuff I'm learning and stuff that I think is useful. If you got any questions about any of the blogs or got ideas for a blog, just hit me up on Twitter (<a href="https://twitter.com/marcoslooten" target="_blank" rel="nofollow noopener">@marcoslooten</a>) or send me a mail at marco [at] slooten.dev.</p>
+    <ul>
+      {%- for blog in pagination.items | reverse -%}
+      <li class="text-2xl blog-item mb-4 list-none"><a href="{{ blog.url }}" class="block no-underline font-bold hover:underline">{{ blog.data.title }}</a>
+        <div class="text-gray-500 text-xs">{{blog.date.toLocaleDateString()}}</div>
+        <p class="text-gray-600 text-sm">{{ blog.data.description }}</p></li>
+      {%- endfor -%}
+    </ul>
+    {% if pagination.href.previous or pagination.href.next %}
+    <div class="pagination grid grid-cols-2 mt-16 text-sm">
+      <div>{% if pagination.href.previous %}<a href="{{pagination.href.previous}}">Previous</a>{% endif %}</div>
+      <div class="text-right">{% if pagination.href.next %}<a href="{{pagination.href.next}}">Next</a>{% endif %}</div>
+    </div>
+    {% endif %}
+    </div>
+    {% include 'footer.njk' %}
+  </body>
+</html>

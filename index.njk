@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="canonical" href="https://marcoslooten.com/" />
+    <title>Marco Slooten | About</title>
+  </head>
+  <body class="flex flex-col">
+    {% include 'header.njk' %}
+
+    <div class="container mx-auto max-w-4xl px-4 my-12">
+    <div class="grid grid-cols-2 gap-8">
+     
+      <div class="p-8 pb-4 pl-0">
+      <h4 class="mt-0 text-gray-700">Latest posts</h4>
+        <ul class="mb-0">
+          {% set latest_posts = collections.blog | reverse %} {%- for blog in latest_posts.slice(0,3) -%}
+      <li class="blog-item mb-4 list-none"><a href="{{ blog.url }}" class="block no-underline font-bold hover:underline">{{ blog.data.title }}</a>
+        <div class="text-gray-500 text-xs">{{blog.date.toLocaleDateString()}}</div>
+        <p class="text-gray-600 text-sm">{{ blog.data.description }}</p></li>
+      {%- endfor -%}
+    </ul>
+      </div>
+ <div>
+   <div class="shadow-xl p-8 rounded-md">
+       <p
+        ><img src="/assets/marco-guitar.png" class="float-right w-4/12 ml-4 mb-4 shadow-lg rounded-md" alt="Marco holding a guitar" /><span class="text-xl font-bold">👋 Hi, I'm Marco</span><br> and I've been doing front-end development professionally for over 10 years now.</p><p> I currently work at Topicus on educational software for school teachers, using Angular.</p><p><strong class="text-gray-700">I love helping people code.</strong></p
+      >
+      <p class="mb-0"
+        >
+        
+        Besides programming I like music and guitars. I record/mix and play guitar in my band Endeavour (check out <a href="https://distrokid.com/hyperfollow/endeavour2/poison-lady" target="_blank" rel="nofollow noopener">our latest release here</a> if you like rock/metal).</p
+      >
+      </div>
+      </div>
+    </div>
+    </div>
+     
+    
+
+    </div>
+    {% include 'footer.njk' %}
+  </body>
+</html>

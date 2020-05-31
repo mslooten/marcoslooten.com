@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="canonical" href="https://marcoslooten.com/" />
+    <title>Marco Slooten | About</title>
+  </head>
+  <body class="flex flex-col">
+    {% include 'header.njk' %}
+
+    <div class="container mx-auto max-w-4xl p-4">
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl bg-indigo-500 p-8 {% if cover_image %}-mt-16{% endif %} z-10 relative shadow-xl rounded-md"
+        id="main-heading"
+        >About</h1
+      >
+    </div>
+    <div class="container mx-auto max-w-3xl px-4 mb-12">
+      
+      <h3 class="clear-both">Background</h3>
+      <p
+        ><img src="/assets/marco-guitar.png" class="float-right w-3/12 ml-4 mb-4 shadow-lg rounded-md" alt="Marco holding a guitar" />Like many developers, it all started with music. When I was about 14-15, I was in a band in school and we needed a website. I built it with MS FrontPage (shudders). A little later I was coding HTML and CSS by hand and was hooked.</p
+      >
+      <p>
+      While in university (Communication Science) I was freelancing, mostly creating WordPress sites for small and medium sized businesses. I learned how to create WordPress themes, how to make those sites fast, how to add interactivity with jQuery (back then everything had to have a slider) and how to deal with clients.</p>
+      
+      <p>After that, as my first fulltime gig, I worked for almost 5 years at a market research agency. The first couple of years there were spent making online surveys more interactive by applying gamification principles to create new types of survey questions. Later, we started building interactive dashboards (using React) for large consumer brands to view their quantitative and qualitive research data. In that time I also led a part-remote scrum team (3FTE) and supervised/coached all development and graphical design interns. Doing that, I discoved my passion for helping people develop their (web) skills.</p>
+
+      <p>
+      At the end of 2018 I started working for Topicus Education, working on a new product for primary school teachers (using Angular and Nest). I also get to spend part of my time coaching and helping other developers on all front-end topics, which I really like.
+      </p>
+
+    </div>
+    {% include 'footer.njk' %}
+  </body>
+</html>

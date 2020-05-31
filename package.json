@@ -5,8 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
+    "tailwind": "npx tailwindcss build style.css -o assets/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marco Slooten",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "instant.page": "^5.1.0",
+    "postcss": "^7.0.30",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "prettier": "^2.0.5"
+  }
 }
