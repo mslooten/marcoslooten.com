@@ -8,14 +8,9 @@
           my newsletter below.</p
         >
         <div class="text-left w-6/12 mx-auto">
-          <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+          <form name="newsletter" method="POST" netlify-honeypot="bot-field" data-netlify="true" id="newsletter">
             <p class="hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            <p>
-              <label class="flex flex-row text-gray-100"
-                >First name: <input type="text" name="name" class="text-gray-700 ml-auto w-8/12 rounded-sm p-1"
-              /></label>
             </p>
             <p>
               <label class="flex flex-row text-gray-100"
@@ -30,8 +25,8 @@
           </form>
         </div>
         <p class="text-gray-500 mt-8 text-sm">
-          I will not spam and I will only use your name and email address to send these mails. Email open tracking (the dreaded spy pixel)
-          is disabled in the mail service I use (buttondown.email).</p
+          I will not spam and I will only use your email address to send these mails. Email open tracking (the dreaded spy pixel) is
+          disabled in the mail service I use (buttondown.email).</p
         >
       </div>
       <p class="text-center">
@@ -43,6 +38,29 @@
     >
   </div>
 </div>
+<script>
+  const processForm = form => {
+    const data = new FormData(form);
+    data.append('form-name', 'newsletter');
+    fetch('/', {
+      method: 'POST',
+      body: data
+    })
+      .then(() => {
+        form.innerHTML = `<div class="form--success">Almost there! Please check your inbox for a confirmation e-mail.</div>`;
+      })
+      .catch(error => {
+        form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+      });
+  };
+  const emailForm = document.querySelector('#newsletter');
+  if (emailForm) {
+    emailForm.addEventListener('submit', e => {
+      e.preventDefault();
+      processForm(emailForm);
+    });
+  }
+</script>
 <script src="/assets/instantpage.js" type="module" defer></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20731045-1"></script>

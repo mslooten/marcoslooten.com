@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^9.8.0",
+    "dotenv": "^8.2.0",
     "instant.page": "^5.1.0",
+    "node-fetch": "^2.6.0",
     "postcss": "^7.0.30",
     "tailwindcss": "^1.4.6"
   },
