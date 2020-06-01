@@ -15,11 +15,11 @@
     <link rel="canonical" href="https://marcoslooten.com{{ page.url }}" />
     <title>{{ title }} - Marco Slooten</title>
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col flex-grow-0">
     {% include 'header.njk' %}
     {% if cover_image %}
-    <div class="container mx-auto flex justify-center relative z-0 px-8">
-      <img src="{{ cover_image }}" alt="{{ title }}" class="shadow-2xl lg:rounded-lg" />
+    <div class="container mx-auto relative z-0 px-8">
+      <img src="{{ cover_image }}" alt="{{ title }}" class="shadow-2xl lg:rounded-lg mx-auto" />
     </div>
     {% endif %}
     <div class="container mx-auto max-w-4xl p-4">

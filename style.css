@@ -248,6 +248,7 @@ ul li {
 
 ul {
   margin-bottom: 1rem;
+  list-style-position: inside;
 }
 
 .pagination a {
