@@ -7,16 +7,19 @@
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "tailwind": "npx tailwindcss build style.css -o assets/style.css",
+    "css": "NODE_ENV=production postcss style.css > assets/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marco Slooten",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^9.8.0",
+    "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
     "instant.page": "^5.1.0",
     "node-fetch": "^2.6.0",
     "postcss": "^7.0.30",
+    "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {

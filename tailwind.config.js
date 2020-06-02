@@ -1,4 +1,5 @@
 module.exports = {
+  purge: ['./*.njk', './*.html', './_includes/*.njk'],
   theme: {
     extend: {
       screens: {

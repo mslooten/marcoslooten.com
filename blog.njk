@@ -8,17 +8,30 @@ pagination:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <meta name="description" content="This is my blog about HTML, CSS, JS, frameworks and other web development areas." />
+       <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" />
+
+<link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
+      media="print" onload="this.media='all'" />
+
+<noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" />
+</noscript>
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <link rel="manifest" href="/assets/site.webmanifest">
     <link rel="stylesheet" href="/assets/style.css" />
     <link rel="canonical" href="https://marcoslooten.com/" />
-    <title>Marco Slooten | Front end developer</title>
+    <title>Marco Slooten | Blog</title>
   </head>
   <body class="flex flex-col">
   {% include 'header.njk' %}
