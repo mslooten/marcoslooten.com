@@ -45,16 +45,17 @@
   const processForm = form => {
     const data = new FormData(form);
     data.append('form-name', 'newsletter');
-    fetch('https://buttondown.email/api/emails/embed-subscribe/marcoslooten', {
-      method: 'POST',
-      body: data
-    })
-      .then(() => {
-        form.innerHTML = `<div class="form--success">Almost there! Please check your inbox for a confirmation e-mail.</div>`;
-      })
-      .catch(error => {
-        form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
-      });
+    console.log(data);
+    // fetch('https://buttondown.email/api/emails/embed-subscribe/marcoslooten', {
+    //   method: 'POST',
+    //   body: data
+    // })
+    //   .then(() => {
+    //     form.innerHTML = `<div class="form--success">Almost there! Please check your inbox for a confirmation e-mail.</div>`;
+    //   })
+    //   .catch(error => {
+    //     form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+    //   });
   };
   const emailForm = document.querySelector('#newsletter');
   if (emailForm) {

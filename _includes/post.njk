@@ -31,8 +31,8 @@
   <body class="flex flex-col flex-grow-0">
     {% include 'header.njk' %}
     {% if cover_image %}
-    <div class="container mx-auto relative z-0 px-8">
-      <img src="{{ cover_image }}" alt="{{ title }}" class="shadow-2xl lg:rounded-lg mx-auto" />
+    <div class="container mx-auto relative z-0">
+      <img src="{{ cover_image }}" alt="{{ title }}" class="shadow-2xl lg:rounded-lg mx-auto w-full object-cover" style="max-height: 420px" />
     </div>
     {% endif %}
     <div class="container mx-auto max-w-4xl p-4">
