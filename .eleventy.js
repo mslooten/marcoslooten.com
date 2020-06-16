@@ -7,4 +7,5 @@ module.exports = function (eleventyConfig) {
     _redirects: '_redirects',
     'node_modules/instant.page/instantpage.js': 'assets/instantpage.js'
   });
+  eleventyConfig.setTemplateFormats(['md', 'jpg', 'png']);
 };
