@@ -10,10 +10,6 @@ Recently I needed a flexible avatar component for an admin-type dashboard. Admin
 
 First, we'll be creating a plain HTML and CSS avatar component. Then we will switch to JavaScript and make the color dependant on the initials provided.
 
-> blockquote test
-> still testing
-> the end
-
 ## HTML and (mostly) CSS
 
 We are going to create the basic structure and styling of the avatar. The HTML is just a div with a class and the user's initials inside: `<div class="avatar">AA</div>`. It doesn't look like much now, but wait until we apply some CSS!
