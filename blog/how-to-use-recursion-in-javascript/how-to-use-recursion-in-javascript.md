@@ -71,7 +71,7 @@ function generateNumber() {
 }
 ```
 
-Now it uses the modulus to check if the number is divisible by 11. The modulus keeps dividing by 11 until the remainder is smaller than 11, and returns that value. So for a number to be divisible by 11 (no decimals), it needs to return 0. Want to know more about the modulus? I wrote about creating random avatar colors with the help of the modulus.
+Now it uses the modulus to check if the number is divisible by 11. The modulus keeps dividing by 11 until the remainder is smaller than 11, and returns that value. So for a number to be divisible by 11 (no decimals), it needs to return 0. Want to know more about the modulus? I wrote about [creating random avatar colors with the help of the modulus](https://marcoslooten.com/blog/creating-avatars-with-colors-using-the-modulus/).
 
 The problem with the above function is that when the number isn't divisible by 11, it returns 'undefined' (which is the default return value for any function). So we will end up with an array with a bunch of empty spots and just a handful of numbers. Instead, I want to modify my function so that it returns a number that meets my requirements _every time_!
 
