@@ -165,3 +165,5 @@ avatars.forEach(avatar => {
 We created a custom avatar by starting with HTML markup to give it structure. Then we added CSS to make the div square, round the corners, give it a background color and some text styling. After that, we went on to JavaScript. We made a pure function that returns a number, which is the character codes for the input string glued together. Then, using the modulo operator, we got a color value from the array of colors and assigned it to the avatar in the DOM.
 
 This is one of the many use cases of the modulus. I always find it cool if I get to use it. Do you use the modulus in your code, and what does it do? Let me know in the comments or on Twitter. Thanks for reading!
+
+_Want more articles like this? You can sign up for my newsletter below 👇_

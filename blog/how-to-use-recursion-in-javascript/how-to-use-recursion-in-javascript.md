@@ -48,7 +48,7 @@ function generateNumber() {
 }
 ```
 
-Here, we generate a random number between 0 and 1 and multiply it by the difference between our min and max + 1. The highest value is just below 90,000 (`Math.random()` will never return 1) and the lowest is 0 (it _can_ return 0). We round it down because don't need any decimals and add the missing 10,000 back. Now we have a number between 10,000 and 99,999.
+Here, we generate a random number between 0 and 1 and multiply it by the difference between our min and max + 1. The highest value is just below 90,000 (`Math.random()` will never return 1) and the lowest is 0 (it _can_ return 0). We round it down because we don't need any decimals and add the missing 10,000 back. Now we have a number between 10,000 and 99,999.
 
 We need 100 passcodes for the party, so let's generate them and store them in an array:
 
@@ -98,7 +98,7 @@ The parent function receives that value in the place where the child function wa
 
 So we call one function ourselves, and that one function can call itself again from within, if it's needed. The child will pass back the value to the parent, who will pass it back to where it was called. This goes as deep as it needs to go. If the child does not have the right number, it could do another function call. If that one doesn't have the right number, it could also do another function call. This can go on until we meet our condition (divisible by 11), then we return a value which gets passed back.
 
-- Warning: You could easily create an infinite loop here if you don't have any conditions. If we didn't have the if statement, we would keep going until we run our of resources and crash our browser.
+- Warning: You could easily create an infinite loop here if you don't have any conditions. If we didn't have the if statement, we would keep going until we run out of resources and crash our browser.
 
 If this seems confusing I don't blame you. You don't often see recursive code and it takes some mental gymnastics to grasp it. If it's not clear, I've got another example. Otherwise, feel free to skip to the end!
 
@@ -106,7 +106,7 @@ If this seems confusing I don't blame you. You don't often see recursive code an
 
 Let me give you another example to make it more clear:
 
-Imagine yourself at a dinner where you are seated at a large table. You ask the person sitting to your right to pass the bread basket. If that person has the basket within reach, she will pass it back to you. If she doesn't, she will ask the person sitting to her right. This goes on until we find the person with the bread basket within reach. They will pass it back the person on their left, who will also pass it on, until it reaches you.
+Imagine yourself at a dinner where you are seated at a large table. You ask the person sitting to your right to pass the breadbasket. If that person has the basket within reach, she will pass it back to you. If she doesn't, she will ask the person sitting to her right. This goes on until we find the person with the breadbasket within reach. They will pass it back the person on their left, who will also pass it on, until it reaches you.
 
 If we were to convert this to code, it might read something like this:
 
@@ -137,6 +137,6 @@ If your head hurts right now I don't blame you. Recursion is really something th
 - recursion is the process of a function calling itself
 - it has to have a defined end condition that can be reached with certainty, because
 - it's easy to create an infinite recursion by accident and crash your application
-- it will pass back the right value immediately; or it will call itself again until it does have the right value
+- it will pass back the right value immediately, or it will call itself again until it does have the right value
 
 I'd love to hear your use cases for recursion if you can think of any. It would also be a cool exercise to recreate our number-generating function without recursion, using a while-loop for instance.
