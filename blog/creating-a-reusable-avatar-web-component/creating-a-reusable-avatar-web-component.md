@@ -1,7 +1,8 @@
 ---
-title: Creating a reusable avatar web component
+title: Creating a Reusable Avatar Web Component
 published: true
 description: Learn how to write a web component that can be used everywhere
+tags: javascript, frontend, beginners, webcomponents
 cover_image: web_components.jpg
 date: 2020-08-26
 ---
@@ -16,18 +17,18 @@ So let's make one component. We're going to recreate the avatar component I've m
 
 There are frameworks for web components, but we're going to build one just with vanilla JavaScript. You might be tempted to name it 'avatar', but that's actually an invalid name. To allow better separation from native HTML elements, web components need to contain a dash. Note how there aren't any HTML elements that contain a dash, so you can consider the dash a visual clue that it might be a web component. Let's call it custom-avatar then. Moving on!
 
-First, create a class named 'CustomAvatar' which extends HTMLElement. Extending is necessary, because we need access to all kinds of functionality which comes with the HTMLElement. After the class, we need to tell the browser that there's a new custom element with a certain name ('custom-avatar') and a certain class ('CustomAvatar'):
+First, create a class named 'CustomAvatar' which extends HTMLElement. Extending is necessary because we need access to all kinds of functionality which comes with the HTMLElement. After the class, we need to tell the browser that there's a new custom element with a certain name ('custom-avatar') and a certain class ('CustomAvatar'):
 
 ```js
 class CustomAvatar extends HTMLElement {}
 window.customElements.define('custom-avatar', CustomAvatar);
 ```
 
-Although the class name (CustomAvatar) can be any name we want, it's convention to use the same name as our custom element, but in PascalCase (each word capitalised) instead of kebab-cased (with a dash). You can now add the tag to the HTML: `<custom-avatar></custom-avatar>`. Nothing to see yet. Let's make it look like an avatar!
+Although the class name (CustomAvatar) can be any name we want, it's convention to use the same name as our custom element, but in PascalCase (each word capitalized) instead of kebab-cased (with a dash). You can now add the tag to the HTML: `<custom-avatar></custom-avatar>`. Nothing to see yet. Let's make it look like an avatar!
 
 ## Adding HTML and CSS to your web component
 
-Inside of the CustomAvatar class, we are going to use the constructor. This method is called when the component is initialised and can be used for markup and styling. We are also going to call super(), which is needed to inherit all the methods and properties from HTMLElement.
+Inside of the CustomAvatar class, we are going to use the constructor. This method is called when the component is initialized and can be used for markup and styling. We are also going to call super(), which is needed to inherit all the methods and properties from HTMLElement.
 
 ```js
 class CustomAvatar extends HTMLElement {
@@ -92,10 +93,10 @@ Now you should see a pink circle on the page. We're getting somewhere!
 
 Instead of props or @Input() or whatever you're used to with a framework like React or Angular, we're going to use regular HTML attributes to pass data to our component. We only need the initials, so that we can use the avatar like this: `<custom-avatar initials="MJ"></custom-avatar>`. If you do this, you can access the attributes using JavaScript, e.g. `this.getAttribute('initials')`. Some examples of web components let you retrieve the attributes in the constructor using this method, but that's bad practice (see the spec here: [https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance)). A better idea to do it in `connectedCallback`, which is called when the component is loaded.
 
-Even better is `attributesChangedCallback`. This method is called whenever the attributes are updated. Luckily, they are also changed when the component first loads. The initial value of attributes is `null` and once it's ready it will set them to the provided attribute value. `attributesChangedCallback` takes three arguments: name, oldValue and newValue. Perfect for us! Not only is it a good place to get the initial values, but it will also run again in case the value has changed (and we would need to get a new colour for our avatar). Add the following code _outside of the constructor_:
+Even better is `attributesChangedCallback`. This method is called whenever the attributes are updated. Luckily, they are also changed when the component first loads. The initial value of attributes is `null` and once it's ready it will set them to the provided attribute value. `attributesChangedCallback` takes three arguments: name, oldValue, and newValue. Perfect for us! Not only is it a good place to get the initial values, but it will also run again in case the value has changed (and we would need to get a new color for our avatar). Add the following code _outside of the constructor_:
 
 ```js
-// This is our code to generate a color from a string
+// This is our code to generate a color code from a string
 // For more info, see the blog about this technique:
 // https://marcoslooten.com/blog/creating-avatars-with-colors-using-the-modulus/
 
@@ -130,7 +131,7 @@ attributeChangedCallback(name, oldValue, newValue) {
 
 ## How to make a web component
 
-Now you know how to make a simple web component! We've started by creating a class that extends the HTMLElement and telling the DOM that we have a custom element. Then, in the constructor, we do the initial set up for our component with the default markup and fallback background colour. We used DOM methods that existed for quite some time that you might already be familiar with. Lastly, we made use of one of the built-in lifecycle methods of web components, in this case the attributeChangedCallback which will fire any time one of our attributes is set or updated.
+Now you know how to make a simple web component! We've started by creating a class that extends the HTMLElement and telling the DOM that we have a custom element. Then, in the constructor, we do the initial set up for our component with the default markup and fallback background color. We used DOM methods that existed for quite some time that you might already be familiar with. Lastly, we made use of one of the built-in lifecycle methods of web components, in this case, the attributeChangedCallback which will fire any time one of our attributes is set or updated.
 
 When I was looking into web components, I was surprised at how simple it was. It's not comparable to an entire framework, it's just a relatively small API that you can learn much quicker than Angular or React. However, the syntax can feel a bit clunky if you just get started. Also, it really helps if you are well versed in DOM manipulation (querySelector, createElement, innerHTML, innerText, that sort of stuff) because there will be a lot of that once you start writing web components.
 
