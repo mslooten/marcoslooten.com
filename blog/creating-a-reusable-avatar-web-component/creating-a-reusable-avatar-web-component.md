@@ -2,7 +2,6 @@
 title: Creating a Reusable Avatar Web Component
 published: true
 description: Learn how to write a web component that can be used everywhere
-tags: javascript, frontend, beginners, webcomponents
 cover_image: web_components.jpg
 date: 2020-08-26
 ---
