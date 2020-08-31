@@ -7,7 +7,8 @@
     <meta name="twitter:description" content="{% if description %}{{description}}{% else %}Blog about {{title}}{% endif %}" />
     <meta name="twitter:title" content="{{title}}" />
     <meta name="twitter:site" content="@marcoslooten" />
-    <meta name="twitter:image" content="https://marcoslooten.com{{ page.url }}{{cover_image}}" />
+    <meta name="twitter:image" content="{{title | social(description)}}" />
+    <meta name="og:image" content="{{title | social(description)}}" />
     <meta name="twitter:card" content="summary" />
     
     <link rel="preconnect"
@@ -49,10 +50,10 @@
         <p class="text-sm text-gray-500">Published on {{ page.date.toLocaleDateString() }}<br>  Permalink: <a href="https://marcoslooten.com{{ page.url }}">https://marcoslooten.com{{ page.url }}</a>
       
       {{ content | safe }}
-    </div>
 
     </div>
     {% include 'footer.njk' %}
+
 
 
   </body>

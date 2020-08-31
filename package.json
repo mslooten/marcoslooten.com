@@ -13,6 +13,7 @@
   "author": "Marco Slooten",
   "license": "ISC",
   "dependencies": {
+    "@jlengstorf/get-share-image": "^0.7.1",
     "autoprefixer": "^9.8.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
