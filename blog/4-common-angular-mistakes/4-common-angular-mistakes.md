@@ -20,7 +20,7 @@ Luckily, it's easily fixed. There are multiple ways to do it:
 2. If you only need the first emission from an observable, consider using first() (or take(1)) in the subscription: `this.observable.pipe(first()).subscribe(...)`. This will automatically unsubscribe _after getting the first emission_. If it is possible that it won't emit something, this is not the right option. Also, if you expect the data to possibly change while viewing/interacting with the component, it's also not the right option. When in doubt, go for option 3:
 3. Initialize a property with a subscription, and add any new subscriptions to that. In the ngOnDestroy method, you can then unsubscribe to just the one subscription (which will contain the others):
 
-```js
+```javascript
 subscription = new Subscription();
 
 ngOnInit(): void {
@@ -84,7 +84,7 @@ When you need to do something to the data that you're getting before showing it,
 
 When I wasn't aware of everything you could do with RxJS (or rather, was actively avoiding having to use it when I just started), I might haven written code like this: _(for the record, this is a bad example, do not copy)_
 
-```js
+```javascript
   name$ = of('Marco').pipe(delay(1000)); // This will be the response for the API.
   // With 'of' and the delay we're mimicking an API response
   job$ = of('developer').pipe(delay(2000)); // Same thing here
@@ -130,7 +130,7 @@ That's basically what we want, so let's proceed. For the record, there are other
 
 We can refactor the ngOnInit part like this:
 
-```js
+```javascript
 ngOnInit(): void {
   this.message$ = combineLatest([this.data1$, this.data2$]).pipe(
     map(([name, job]) => {
