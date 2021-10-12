@@ -1,7 +1,7 @@
 ---
 title: 10 Quick Git Command Line Tips
 published: false
-description: Using git with the command line isn't as hard as you might think. Personally, with this X lines I can do all daily git related tasks.
+description: Using git with the command line isn't as hard as you might think. Personally, with this 10 commands I can do all daily git related tasks.
 date: 2021-10-02
 cover_image: git.jpg
 ---
@@ -69,6 +69,8 @@ When you're back on the relevant branch and want to have that code available aga
 If you're working on a feature, sometimes the development branch gets updated. It's good practice to often merge that in to prevent large conflicts. You can use the following syntax:
 
 `git merge origin/branch-name`
+
+An often made mistake is replacing the slash with a space. It will not return an error, but it will not merge the branch you want (instead it will merge the default branch). So always use a slash between 'origin' and the branch name.
 
 If there are conflicts, you can manually fix them in the conflicted files and then add & commit them. After that, you should be good to go.
 
