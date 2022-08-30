@@ -9,7 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'node_modules/instant.page/instantpage.js': 'assets/instantpage.js'
   });
-  eleventyConfig.setTemplateFormats(['md', 'njk']);
+  eleventyConfig.setTemplateFormats(['jpg', 'png', 'md', 'njk']);
   eleventyConfig.addNunjucksFilter('social', (title, desc) => {
     return getShareImage({
       title: title,
