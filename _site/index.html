@@ -63,7 +63,7 @@
  <div>
    <div class="shadow-xl p-8 rounded-md" id="me">
        <p
-        ><img src="/assets/marco-guitar.png" class="float-right w-4/12 ml-4 mb-4 shadow-lg rounded-md" alt="Marco holding a guitar" /><span class="text-xl font-bold">👋 Hi, I'm Marco</span><br> and I've been doing front-end development professionally for over 10 years now.</p><p> I currently work at Planon, where I'm part of the team that's building a brand new dashboard.</p><p><strong class="text-gray-700">I love helping people code.</strong></p
+        ><img src="/assets/marco-guitar.png" class="float-right w-4/12 ml-4 mb-4 shadow-lg rounded-md" alt="Marco holding a guitar" /><span class="text-xl font-bold">👋 Hi, I'm Marco</span><br> and I'm an experienced front end engineer.</p><p> I currently work at Miele X, where I'm part of the team that's responsible for the support part of the website.</p><p><strong class="text-gray-700">I love helping people code.</strong></p
       >
       <p class="mb-0"
         >
@@ -81,82 +81,17 @@
     <div class="mt-auto">
   <div id="footer" class="p-8 mt-24 shadow-inner">
     <div class="container max-w-3xl px-4 mx-auto">
-      <div class="text-center text-gray-100 -mt-16 rounded-md shadow-lg bg-gray-800 p-8 pb-4 mb-12">
-        <h5 class="mt-0 font-bold text-indigo-400 text-xl">Want to keep up to date?</h5>
-        <p class="text-gray-100 mb-8"
-          >If you like what you read and you want to receive the occassional update when I publish something interesting, please sign up for
-          my newsletter below.</p
-        >
-        <div class="text-left max-w-xs mx-auto">
-         <form
-  action="https://buttondown.email/api/emails/embed-subscribe/marcoslooten"
-  method="post"
-  class="embeddable-buttondown-form text-gray-100"
-  id="newsletter"
-><p>
-  <label for="bd-email" class="text-gray-100 flex flex-row items-center">Email: 
-  <input type="email" name="email" id="bd-email" class="ml-auto w-8/12 text-gray-700 p-1 rounded-sm" required></label></p>
- <p> <label class="text-gray-100 text-sm">
-  <input type="checkbox" name="tag" value="consent" required> I'd like to subscribe to updates from Marco</label></p>
-   <p class="hidden"> <label class="text-gray-100 text-sm">
-  <input type="checkbox" name="tag" value="confirm"> I'd like to receive the newsletter</label></p>
-  <input type="hidden" value="1" name="embed"></input>
-  <button type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded-md block mx-auto" id="submit">Subscribe</button>
-</form>
-        </div>
-        <p class="text-gray-500 mt-8 text-sm">
-          I will not spam and I will only use your email address to send these mails. Email open tracking (the dreaded spy pixel) is
-          disabled in the mail service I use (buttondown.email).</p
-        >
-      </div>
       <p class="text-center">
         <a href="/privacy/" class="text-gray-400 text-sm hover:text-gray-600">Privacy</a>
       </p>
       <p class="text-center text-sm text-gray-400"
-        >Copyright &copy; 2019-<span id="year">2022</span></p
+        >Copyright &copy; 2019-<span id="year">2023</span></p
       ></div
     >
   </div>
 </div>
-<script>
-  document.querySelector("#submit").addEventListener("click", () => {
-    document.querySelector("#submit").innerText = 'Sending...'
-  });
-  const processForm = form => {
-    const data = new FormData(form);
-    data.append('form-name', 'newsletter');
-    fetch('https://buttondown.email/api/emails/embed-subscribe/marcoslooten', {
-      method: 'POST',
-      body: data
-    })
-      .then(() => {
-        form.innerHTML = `<div class="form--success">Almost there! Please check your inbox for a confirmation e-mail.</div>`;
-      })
-      .catch(error => {
-        form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
-      });
-  };
-  const emailForm = document.querySelector('#newsletter');
-  if (emailForm) {
-    emailForm.addEventListener('submit', e => {
-      e.preventDefault();
-      processForm(emailForm);
-    });
-  }
-</script>
+
 <script src="/assets/instantpage.js" type="module" defer></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20731045-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-20731045-1', { anonymize_ip: true });
-</script>
 
 
   </body>
